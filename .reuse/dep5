@@ -1,0 +1,62 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vendor-civetweb
+Upstream-Contact: Grigore Stefan <g_stefan@yahoo.com>
+Source: https://github.com/g-stefan/vendor-civetweb
+License: MIT
+
+Files: .github/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: .github/CODE_OF_CONDUCT.md
+Copyright: 2014 Coraline Ada Ehmke <https://where.coraline.codes/>
+License: CC-BY-4.0
+
+Files: .gitignore
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: .vscode/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: mkdocs.yml
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build.cmd
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build.sh
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: README.md
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: MIT
+
+Files: archive/* source/* output/* temp/*
+Copyright: Copyright (c) 2013-2020 The CivetWeb developers ([CREDITS.md](https://github.com/civetweb/civetweb/blob/master/CREDITS.md))
+	Copyright (c) 2004-2013 Sergey Lyubka
+	Copyright (c) 2013 No Face Press, LLC (Thomas Davis)
+	Copyright (c) 2013 F-Secure Corporation
+	Copyright (C) 1994-2015 Lua.org, PUC-Rio.
+	Copyright (C) 2002-2016 Tiago Dionizio, Doug Currie
+	Copyright Kepler Project 2003 (http://www.keplerproject.org/luafilesystem)
+	Copyright (C) 2007-2013 Gerald Franz, eludi.net
+	Copyright (c) 2013-2017 by Duktape authors (see AUTHORS.rst)
+	Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler
+License: MIT and Zlib
+
+Files: test/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: version.ini version.txt
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
