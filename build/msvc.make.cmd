@@ -31,7 +31,7 @@ set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
 
-copy /Y /B build\source\CMakeLists.txt source\src\CMakeLists.txt
+copy /Y /B build\source\CMakeLists.txt source\CMakeLists.txt
 
 if not exist temp\cmake mkdir temp\cmake
 pushd temp\cmake

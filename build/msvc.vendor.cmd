@@ -23,7 +23,7 @@ del /F /Q archive\%PROJECT%-%VERSION%.7z goto:eof
 rem Source
 pushd archive
 set VENDOR=%PROJECT%-%VERSION%
-set WEB_LINK=https://github.com/civetweb/civetweb/archive/v1.13.zip
+set WEB_LINK=https://github.com/civetweb/civetweb/archive/v1.15.zip
 if not exist %VENDOR%.zip curl --insecure --location %WEB_LINK% --output %VENDOR%.zip
 7z x %VENDOR%.zip -aoa -o.
 del /F /Q %VENDOR%.zip
