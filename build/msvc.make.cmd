@@ -22,11 +22,13 @@ if not "%ACTION%" == "make" goto :eof
 
 call :cmdX xyo-cc --mode=%ACTION% --source-has-archive civetweb
 
+if not exist output\ mkdir output
 if not exist temp\ mkdir temp
 
 set INCLUDE=%XYO_PATH_REPOSITORY%\include;%INCLUDE%
 set LIB=%XYO_PATH_REPOSITORY%\lib;%LIB%
 set WORKSPACE_PATH=%CD%
+set WORKSPACE_PATH_OUTPUT=%WORKSPACE_PATH%\output
 set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
@@ -44,7 +46,7 @@ rem SET CMD_CONFIG=%CMD_CONFIG% help
 SET CMD_CONFIG=%CMD_CONFIG% ../../source
 SET CMD_CONFIG=%CMD_CONFIG% -G "Ninja"
 SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_BUILD_TYPE=ReleaseMT
-SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_INSTALL_PREFIX=%WORKSPACE_PATH_BUILD%\civetweb
+SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_INSTALL_PREFIX=%WORKSPACE_PATH_OUTPUT%
 SET CMD_CONFIG=%CMD_CONFIG% -DCIVETWEB_BUILD_TESTING=OFF
 
 if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag %CMD_CONFIG%
