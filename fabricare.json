@@ -2,7 +2,7 @@
 	"project": {
 		"name" : "civetweb",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "LicenseRef-",
+		"SPDX-License-Identifier": "MIT and Zlib",
 		"sourceLink" : "https://github.com/civetweb/civetweb",
 		"version" : "1.15"
 	}
