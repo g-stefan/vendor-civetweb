@@ -4,6 +4,9 @@
 		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "MIT and Zlib",
 		"sourceLink" : "https://github.com/civetweb/civetweb",
-		"version" : "1.15"
+		"version" : "1.15",
+		"hasRelease" : true,
+		"noVersion" : true,
+		"githubRelease" : true
 	}
 }
