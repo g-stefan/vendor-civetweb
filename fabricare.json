@@ -1,13 +1,17 @@
 {
-	"project": {
-		"name" : "civetweb",
+	"solution": {
+		"name" : "vendor-civetweb",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "MIT and Zlib",
-		"sourceLink" : "https://github.com/civetweb/civetweb",
-		"version" : "1.15",
-		"hasRelease" : true,
-		"noVersion" : true,
-		"githubRelease" : true,
-		"githubRepository" : "vendor-civetweb"
+		"projects": [
+			{
+				"name" : "civetweb",
+				"SPDX-License-Identifier": "MIT and Zlib",
+				"sourceLink" : "https://github.com/civetweb/civetweb",
+				"version" : "1.15",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "civetweb",
+		"hasGithub" : true
 	}
 }
