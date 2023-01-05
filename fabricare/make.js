@@ -25,6 +25,8 @@ Shell.mkdirRecursivelyIfNotExists("temp");
 Shell.mkdirRecursivelyIfNotExists("temp/cmake");
 
 if (!Shell.fileExists("temp/build.config.flag")) {
+	Shell.setenv("PATH", "C:\\Program Files\\CMake\\bin;" + Shell.getenv("PATH"));
+
 	Shell.copyFile("fabricare/source/CMakeLists.txt","source/CMakeLists.txt");
 
 	Shell.setenv("CC","cl.exe");
