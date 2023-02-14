@@ -21,6 +21,9 @@ Shell.mkdirRecursivelyIfNotExists("output/bin");
 Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.mkdirRecursivelyIfNotExists("output/lib");
 Shell.mkdirRecursivelyIfNotExists("temp");
+Shell.mkdirRecursivelyIfNotExists("temp/bin");
+Shell.mkdirRecursivelyIfNotExists("temp/include");
+Shell.mkdirRecursivelyIfNotExists("temp/lib");
 
 Shell.mkdirRecursivelyIfNotExists("temp/cmake");
 
@@ -36,7 +39,7 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 	cmdConfig+=" ../../source";
 	cmdConfig+=" -G \"Ninja\"";
 	cmdConfig+=" -DCMAKE_BUILD_TYPE=ReleaseMT";
-	cmdConfig+=" -DCMAKE_INSTALL_PREFIX="+Shell.realPath(Shell.getcwd())+"\\output";
+	cmdConfig+=" -DCMAKE_INSTALL_PREFIX="+Shell.realPath(Shell.getcwd())+"\\temp";
 	cmdConfig+=" -DCIVETWEB_BUILD_TESTING=OFF";
 
 	runInPath("temp/cmake",function(){
@@ -52,5 +55,9 @@ runInPath("temp/cmake",function(){
 	exitIf(Shell.system("ninja clean"));
 });
 
-Shell.filePutContents("temp/build.done.flag", "done");
+Shell.copyFilesToDirectory("temp/bin/*", "output/bin");
+Shell.copyDirRecursively("temp/include", "output/include");
+Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.lib");
+Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.static.lib");
 
+Shell.filePutContents("temp/build.done.flag", "done");
