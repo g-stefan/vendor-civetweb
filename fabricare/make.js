@@ -46,9 +46,10 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 		exitIf(Shell.system(cmdConfig));
 	});
 
-	Shell.filePutContents("temp/build.config.flag", "done");
+	//Shell.filePutContents("temp/build.config.flag", "done");
 };
 
+/*
 runInPath("temp/cmake",function(){
 	exitIf(Shell.system("ninja"));
 	exitIf(Shell.system("ninja install"));
@@ -61,3 +62,4 @@ Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.lib");
 Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.static.lib");
 
 Shell.filePutContents("temp/build.done.flag", "done");
+*/
