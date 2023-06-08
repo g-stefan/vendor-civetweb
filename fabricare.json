@@ -7,7 +7,7 @@
 				"name" : "civetweb",
 				"SPDX-License-Identifier": "MIT and Zlib",
 				"sourceLink" : "https://github.com/civetweb/civetweb",
-				"version" : "1.15",
+				"version" : "1.16",
 				"noVersion" : true
 			}
 		],
