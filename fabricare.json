@@ -11,7 +11,6 @@
 				"noVersion" : true
 			}
 		],
-		"releaseName" : "civetweb",
-		"hasGithub" : true
+		"releaseName" : "civetweb"
 	}
 }
