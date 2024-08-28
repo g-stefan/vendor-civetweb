@@ -30,37 +30,45 @@ Shell.mkdirRecursivelyIfNotExists("temp/cmake");
 if (!Shell.fileExists("temp/build.config.flag")) {
 	Shell.setenv("PATH", "C:\\Program Files\\CMake\\bin;" + Shell.getenv("PATH"));
 
-	Shell.copyFile("fabricare/source/src.CMakeLists.txt","source/src/CMakeLists.txt");
+	Shell.copyFile("fabricare/source/src.CMakeLists.txt", "source/src/CMakeLists.txt");
 
-	Shell.setenv("CC","cl.exe");
-	Shell.setenv("CXX","cl.exe");
+	Shell.setenv("CC", "cl.exe");
+	Shell.setenv("CXX", "cl.exe");
 
-	cmdConfig="cmake";
-	cmdConfig+=" ../../source";
-	cmdConfig+=" -G \"Ninja\"";
-	cmdConfig+=" -DCMAKE_BUILD_TYPE=ReleaseMT";
-	cmdConfig+=" -DCMAKE_INSTALL_PREFIX="+Shell.realPath(Shell.getcwd())+"\\temp";
-	cmdConfig+=" -DCIVETWEB_BUILD_TESTING=OFF";
-	cmdConfig+=" -DCIVETWEB_ENABLE_ZLIB=ON";
-	cmdConfig+=" -DCIVETWEB_ENABLE_WEBSOCKETS=ON";
-	cmdConfig+=" -DCIVETWEB_ENABLE_CXX=ON";
+	cmdConfig = "cmake";
+	cmdConfig += " ../../source";
+	cmdConfig += " -G \"Ninja\"";
 
-	runInPath("temp/cmake",function(){
+	if (Fabricare.isStatic()) {
+		cmdConfig += " -DBUILD_SHARED_LIBS:BOOL=NO";
+	};
+
+	if (Fabricare.isDynamic()) {
+		cmdConfig += " -DBUILD_SHARED_LIBS:BOOL=YES";
+	};
+
+	cmdConfig += " -DCMAKE_BUILD_TYPE=Release";
+	cmdConfig += " -DCMAKE_INSTALL_PREFIX=" + Shell.realPath(Shell.getcwd()) + "\\temp";
+	cmdConfig += " -DCIVETWEB_BUILD_TESTING=OFF";
+	cmdConfig += " -DCIVETWEB_ENABLE_ZLIB=ON";
+	cmdConfig += " -DCIVETWEB_ENABLE_WEBSOCKETS=ON";
+	cmdConfig += " -DCIVETWEB_ENABLE_CXX=ON";
+
+	runInPath("temp/cmake", function () {
 		exitIf(Shell.system(cmdConfig));
 	});
 
 	Shell.filePutContents("temp/build.config.flag", "done");
 };
 
-runInPath("temp/cmake",function(){
+runInPath("temp/cmake", function () {
 	exitIf(Shell.system("ninja"));
 	exitIf(Shell.system("ninja install"));
 	exitIf(Shell.system("ninja clean"));
 });
 
-Shell.copyFilesToDirectory("temp/bin/*", "output/bin");
+Shell.copyFilesToDirectory("temp/bin/civetweb*", "output/bin");
 Shell.copyDirRecursively("temp/include", "output/include");
 Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.lib");
-Shell.copyFile("temp/lib/civetweb.lib", "output/lib/civetweb.static.lib");
 
 Shell.filePutContents("temp/build.done.flag", "done");
