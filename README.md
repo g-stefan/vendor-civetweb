@@ -4,7 +4,7 @@ Build scripts for compiling [CivetWeb Embedded C/C++ web server](https://github.
 
 ## License
 
-Copyright (c) 2021-2025 Grigore Stefan
+Copyright (c) 2021-2026 Grigore Stefan
 Licensed under the [MIT](LICENSE) license.
 
 **This is a compilation of different works.**
