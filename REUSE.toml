@@ -1,0 +1,76 @@
+version = 1
+SPDX-PackageName = "vendor-civetweb"
+SPDX-PackageSupplier = "Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-PackageDownloadLocation = "https://github.com/g-stefan/vendor-civetweb"
+
+[[annotations]]
+path = ".github/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = ".github/CODE_OF_CONDUCT.md"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014 Coraline Ada Ehmke <https://where.coraline.codes/>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ".gitignore"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = ".vscode/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = "mkdocs.yml"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = "build/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = "build.cmd"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = "build.sh"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = "README.md"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["archive/**", "source/**", "output/**", "temp/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = ["Copyright (c) 2013-2020 The CivetWeb developers ([CREDITS.md](https://github.com/civetweb/civetweb/blob/master/CREDITS.md))", "Copyright (c) 2004-2013 Sergey Lyubka", "Copyright (c) 2013 No Face Press, LLC (Thomas Davis)", "Copyright (c) 2013 F-Secure Corporation", "Copyright (C) 1994-2015 Lua.org, PUC-Rio.", "Copyright (C) 2002-2016 Tiago Dionizio, Doug Currie", "Copyright Kepler Project 2003 (http://www.keplerproject.org/luafilesystem)", "Copyright (C) 2007-2013 Gerald Franz, eludi.net", "Copyright (c) 2013-2017 by Duktape authors (see AUTHORS.rst)", "Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler"]
+SPDX-License-Identifier = "MIT and Zlib"
+
+[[annotations]]
+path = "test/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"
+
+[[annotations]]
+path = ["version.ini", "version.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Grigore Stefan <g_stefan@yahoo.com>"
+SPDX-License-Identifier = "Unlicense"

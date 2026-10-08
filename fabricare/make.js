@@ -40,12 +40,18 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 	cmdConfig += " ../../source";
 	cmdConfig += " -G \"Ninja\"";
 
-	if (Fabricare.isStatic()) {
-		cmdConfig += " -DBUILD_SHARED_LIBS:BOOL=NO";
+	if (Fabricare.isDynamic()) {
+		cmdConfig += " -DBUILD_SHARED_LIBS=ON";
+		cmdConfig += " -DWIN32_MT_BUILD=OFF";
 	};
 
-	if (Fabricare.isDynamic()) {
-		cmdConfig += " -DBUILD_SHARED_LIBS:BOOL=YES";
+	if (Fabricare.isStatic()) {
+		cmdConfig += " -DBUILD_SHARED_LIBS=OFF";
+		cmdConfig += " -DWIN32_MT_BUILD=ON";
+		cmdConfig += " \"-DCMAKE_CXX_FLAGS=/MT /DWIN32 /D_WINDOWS /W3 /GR /EHsc\"";
+		cmdConfig += " \"-DCMAKE_C_FLAGS=/MT /DWIN32 /D_WINDOWS /W3\"";
+		cmdConfig += " \"-DCMAKE_CXX_FLAGS_RELEASE=/MT /O2 /Ob2 /DNDEBUG\"";
+		cmdConfig += " \"-DCMAKE_C_FLAGS_RELEASE=/MT /O2 /Ob2 /DNDEBUG\"";
 	};
 
 	cmdConfig += " -DCMAKE_BUILD_TYPE=Release";
@@ -54,6 +60,8 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 	cmdConfig += " -DCIVETWEB_ENABLE_ZLIB=ON";
 	cmdConfig += " -DCIVETWEB_ENABLE_WEBSOCKETS=ON";
 	cmdConfig += " -DCIVETWEB_ENABLE_CXX=ON";
+	cmdConfig += " -DBUILD_TESTING=OFF";
+	cmdConfig += " -DCIVETWEB_BUILD_TESTING=OFF";
 
 	runInPath("temp/cmake", function () {
 		exitIf(Shell.system(cmdConfig));
